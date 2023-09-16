@@ -27,6 +27,7 @@ public class Teacher implements Exam, TeacherAction {
 @Override
     public void giveExams(){
     System.out.println("Сегодня я принимаю экзамен у " + studentExam);
+
 }
     }
 

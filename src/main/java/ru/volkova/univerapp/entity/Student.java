@@ -34,6 +34,7 @@ public class Student implements Exam, StudentAction {
         } else {
             System.out.println("О, нет! Этот билет я не знаю. Экзамен не сдать. " + examiner + " отправит на пересдачу.");
         }
+
     }
     }
 
