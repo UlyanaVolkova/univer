@@ -8,11 +8,11 @@ public class Teacher implements Exam, TeacherAction {
     String name;
     String subject;
 
-    Student student = new Student("Ivanov", 222);
+    Student student = new Student("Ivanov Ivan", 223);
     String studentExam = student.studentName;
     int studentGroup = student.group;
 
-    University university = new University();
+    University university = new University("TunGMU");
     String nameUniver = university.universityName;
 
     public Teacher(String nameTeacher, String subject ){
