@@ -3,31 +3,42 @@ package ru.volkova.univerapp.entity;
 import ru.volkova.univerapp.service.Exam;
 import ru.volkova.univerapp.service.TeacherAction;
 
-
 public class Teacher implements Exam, TeacherAction {
-    String name;
-    String subject;
+    static String name;
+    static String subject;
+    String studentExam = Student.studentName;
+    int studentGroup = Student.group;
+    String nameUniver = University.universityName;
 
-    Student student = new Student("Ivanov Ivan", 223);
-    String studentExam = student.studentName;
-    int studentGroup = student.group;
-
-    University university = new University("TunGMU");
-    String nameUniver = university.universityName;
-
-    public Teacher(String nameTeacher, String subject ){
-
+    public Teacher(String name, String subject) {
+        this.name = name;
+        this.subject = subject;
     }
 
-@Override
-    public void exam(){
-    System.out.println("Сегодня я принимаю экзамен в " + nameUniver + " у " + studentGroup + " группы. Надеюсь они подготовились.");
-}
-
-@Override
-    public void giveExams(){
-    System.out.println("Сегодня я принимаю экзамен у " + studentExam);
-
-}
+    public String getSubject() {
+        return subject;
     }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void exam() {
+        System.out.println("Сегодня я принимаю экзамен в " + nameUniver + " у " + studentGroup + " группы. Надеюсь они подготовились.");
+    }
+
+    @Override
+    public void giveExams() {
+        System.out.println("Сегодня я принимаю экзамен у " + studentExam);
+    }
+}
 

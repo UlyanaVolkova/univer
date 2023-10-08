@@ -4,26 +4,38 @@ import ru.volkova.univerapp.service.Exam;
 import ru.volkova.univerapp.service.StudentAction;
 
 public class Student implements Exam, StudentAction {
+   static String studentName;
+   static int group;
+ String examiner = Teacher.name;
+ String examSubject = Teacher.subject;
+ String nameUniversity = University.universityName;
 
-   String studentName;
-   int group;
+ public Student(String studentName, int group){
+     this.studentName=studentName;
+     this.group=group;
+ }
 
-    Teacher teacher = new Teacher("Ivan Ivanovich", "Biology");
- String examiner = teacher.name;
- String examSubject = teacher.subject;
+ public String getStudentName(){
+     return studentName;
+ }
 
- University university = new University("TumGMU.");
- String nameUniversity = university.universityName;
+ public void setStudentName(){
+     this.studentName=studentName;
+ }
 
-    public Student(String name, int group) {
-    }
+ public int getGroup(){
+     return group;
+ }
+
+ public void setGroup(){
+     this.group=group;
+ }
 
     @Override
 
             public void exam(){
         System.out.println("Я учусь в " + nameUniversity + ". Сегодня экзамен по " + examSubject);
     }
-
 
     @Override
 
@@ -34,7 +46,6 @@ public class Student implements Exam, StudentAction {
         } else {
             System.out.println("О, нет! Этот билет я не знаю. Экзамен не сдать. " + examiner + " отправит на пересдачу.");
         }
-
     }
     }
 
