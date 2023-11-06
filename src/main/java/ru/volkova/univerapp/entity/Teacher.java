@@ -4,15 +4,17 @@ import ru.volkova.univerapp.service.Exam;
 import ru.volkova.univerapp.service.TeacherAction;
 
 public class Teacher implements Exam, TeacherAction {
-    static String name;
-    static String subject;
-    String studentExam = Student.studentName;
-    int studentGroup = Student.group;
-    String nameUniver = University.universityName;
+    String name;
+    String subject;
+    Student student;
+    University university;
 
     public Teacher(String name, String subject) {
         this.name = name;
         this.subject = subject;
+    }
+
+    public Teacher() {
     }
 
     public String getSubject() {
@@ -32,13 +34,13 @@ public class Teacher implements Exam, TeacherAction {
     }
 
     @Override
-    public void exam() {
-        System.out.println("Сегодня я принимаю экзамен в " + nameUniver + " у " + studentGroup + " группы. Надеюсь они подготовились.");
+    public void exam(University university, Student student, Teacher teacher) {
+        System.out.println("Сегодня я принимаю экзамен в " + university.universityName + " у " + student.group + " группы. Надеюсь они подготовились.");
     }
 
     @Override
-    public void giveExams() {
-        System.out.println("Сегодня я принимаю экзамен у " + studentExam);
+    public void giveExams(Student student) {
+        System.out.println("Сегодня я принимаю экзамен у " + student.studentName);
     }
 }
 

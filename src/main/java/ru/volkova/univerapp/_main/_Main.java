@@ -10,9 +10,9 @@ public class _Main {
         Teacher teacher = new Teacher("Petrov.A.A.", "Biology");
         University university = new University("TumGMU");
 
-        student.exam();
-        teacher.exam();
-        student.pullTicket();
-        teacher.giveExams();
+        student.exam(university, student, teacher);
+        teacher.exam(university, student, teacher);
+        teacher.giveExams(student);
+        student.pullTicket(teacher);
     }
 }
