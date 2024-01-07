@@ -4,14 +4,21 @@ import ru.volkova.univerapp.service.Exam;
 import ru.volkova.univerapp.service.TeacherAction;
 
 public class Teacher implements Exam, TeacherAction {
-    String name;
-    String subject;
-    Student student;
-    University university;
+   private String name;
+    private String subject;
+   private Student student;
+    private University university;
 
-    public Teacher(String name, String subject) {
+    public Teacher(String name, String subject, Student student, University university) {
         this.name = name;
         this.subject = subject;
+        this.student=student;
+        this.university=university;
+    }
+
+    public Teacher(String name, String subject){
+        this.name = name;
+        this.subject=subject;
     }
 
     public Teacher() {
@@ -33,14 +40,36 @@ public class Teacher implements Exam, TeacherAction {
         this.name = name;
     }
 
+    public Student getStudent(){return student;}
+
+    public void setStudent(Student student){
+        this.student=student;
+    }
+
+    public University getUniversity(){return university;}
+
+    public void setUniversity(University university){
+        this.university = university;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Преподаватель")
+                .append(" " + name)
+                .append(", предмет " + subject)
+                .append('.');
+        return sb.toString();
+    }
+
     @Override
     public void exam(University university, Student student, Teacher teacher) {
-        System.out.println("Сегодня я принимаю экзамен в " + university.universityName + " у " + student.group + " группы. Надеюсь они подготовились.");
+        System.out.println("Сегодня я принимаю экзамен в " + university + " у " + student + " группы. Надеюсь они подготовились.");
     }
 
     @Override
     public void giveExams(Student student) {
-        System.out.println("Сегодня я принимаю экзамен у " + student.studentName);
+        System.out.println("Сегодня я принимаю экзамен у " + student);
     }
 }
 
