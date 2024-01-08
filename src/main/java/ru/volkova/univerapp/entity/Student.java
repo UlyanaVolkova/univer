@@ -4,24 +4,25 @@ import ru.volkova.univerapp.service.Exam;
 import ru.volkova.univerapp.service.StudentAction;
 
 public class Student implements Exam, StudentAction {
-   private String studentName;
-   private int group;
+    private String studentName;
+    private int group;
     private Teacher teacher;
-   private University university;
+    private University university;
 
     public Student(String studentName, int group, Teacher teacher, University university) {
         this.studentName = studentName;
         this.group = group;
-        this.university=university;
-        this.teacher=teacher;
+        this.university = university;
+        this.teacher = teacher;
     }
 
-    public Student(String studentName, int group){
-        this.studentName=studentName;
-        this.group=group;
+    public Student(String studentName, int group) {
+        this.studentName = studentName;
+        this.group = group;
     }
 
-    public Student(){}
+    public Student() {
+    }
 
     public String getStudentName() {
         return studentName;
@@ -39,16 +40,20 @@ public class Student implements Exam, StudentAction {
         this.group = group;
     }
 
-    public Teacher getTeacher(){return teacher;}
-
-    public void setTeacher(Teacher teacher){
-        this.teacher=teacher;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public University getUniversity(){return university;}
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
-    public void setUniversity(University university){
-        this.university=university;
+    public University getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(University university) {
+        this.university = university;
     }
 
     @Override

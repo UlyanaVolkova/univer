@@ -1,9 +1,9 @@
 package ru.volkova.univerapp.entity;
 
 public class University {
-   private String universityName;
+    private String universityName;
     private Teacher teacher;
-   private Student student;
+    private Student student;
 
     public String getUniversityName() {
         return universityName;
@@ -13,16 +13,20 @@ public class University {
         this.universityName = universityName;
     }
 
-    public Student getStudent(){return student;}
-
-    public void setStudent(Student student){
-        this.student=student;
+    public Student getStudent() {
+        return student;
     }
 
-    public Teacher getTeacher(){return teacher;}
+    public void setStudent(Student student) {
+        this.student = student;
+    }
 
-    public void setTeacher(Teacher teacher){
-        this.teacher=teacher;
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public University(String universityName, Teacher teacher, Student student) {
@@ -31,14 +35,12 @@ public class University {
         this.student = student;
     }
 
-    public University(String universityName){
-        this.universityName=universityName;
+    public University(String universityName) {
+        this.universityName = universityName;
     }
 
     public University() {
     }
-
-
 
     @Override
     public String toString() {
